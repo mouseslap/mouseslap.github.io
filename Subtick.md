@@ -9,7 +9,7 @@
 [Low jump bind](#low-jump-bind)  
 [Jump bug bind](#jump-bug-bind)  
 [Remove immobility and input errors bind](#remove-immobility-and-input-errors-bind)  
-[Turn bind](#turn-bind)
+[Turn bind](#turn-bind)  
 [Spam CP Bind](#spam-cp-bind)
 
 ## Alias of W
