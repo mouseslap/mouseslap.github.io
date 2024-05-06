@@ -10,6 +10,7 @@
 [Jump bug bind](#jump-bug-bind)  
 [Remove immobility and input errors bind](#remove-immobility-and-input-errors-bind)  
 [Turn bind](#turn-bind)
+[Spam CP Bind](#spam-cp-bind)
 
 ## Alias of W
 Many advanced cs2 binds (jump bug bind, w-release bind) require a change in bind and alias of w, so the latest bind/alias will cover the orginal bind/alias of w, which makes the alias very chaotic. To prevent the case happening, a consistent alias of w is recommanded. The following binds in this doc will keep using the alias of +w/-w, and if there are any additions to commands in the following binds relevant with the alias of w, just add command directly in the alias of w, instead of realiasing the entire thing. 
