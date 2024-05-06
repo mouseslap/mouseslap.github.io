@@ -1,3 +1,3 @@
 * [General](/General.md)
-* [Subtick](/Subtick.md)
 * [Desubtick](/Desubtick.md)
+* [Subtick](/Subtick.md)
