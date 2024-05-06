@@ -1,6 +1,6 @@
 # DESUBTICK PAGE FOR BINDS / ALIASES
-### **If you are in this page, you should have the desubtick binds in your autoexec.cfg file.**
-### Content:
+**If you are in this page, you should have the desubtick binds in your autoexec.cfg file.**
+## Content:
 [Alias of W](#alias-of-w)  
 [Crouch jump bind](#crouch-jump-bind)  
 [W release bind with key](#w-release-bind-with-key)  
