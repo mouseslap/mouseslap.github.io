@@ -1,2 +1,3 @@
-* [README](/README.md)
-* [README2](/README2.md)
+* [General](/General.md)
+* [Subtick](/Subtick.md)
+* [Desubtick](/Desubtick.md)
