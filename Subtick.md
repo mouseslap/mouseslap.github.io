@@ -11,16 +11,20 @@
 [Turn bind](#turn-bind)
 
 ## Alias of W
-Many advanced cs2 binds (jump bug bind, w release bind) require a change in bind and alias of w, so the latest bind/alias will cover the orginal bind/alias of w, which makes the alias very chaotic. To prevent the case happening, a consistent alias of w is recommanded. The following binds in this doc will keep using the alias of +w/-w, and if there are any additions to commands in the following binds relevant with the alias of w, just add command directly in the alias of w, instead of realiasing the entire thing.  
+Many advanced cs2 binds (jump bug bind, w-release bind) require a change in bind and alias of w, so the latest bind/alias will cover the orginal bind/alias of w, which makes the alias very chaotic. To prevent the case happening, a consistent alias of w is recommanded. The following binds in this doc will keep using the alias of +w/-w, and if there are any additions to commands in the following binds relevant with the alias of w, just add command directly in the alias of w, instead of realiasing the entire thing. 
+
+**I recommand to copy the bind below into your autoexec.cfg file.**
 
 For example:  
-When I say: Add command `alias checkw _checkw` in `+w`, you need to change alias of +w from `alias +w "+forward"` to `alias +w "+forward; alias checkw _checkw"`, which is only adding `; alias checkw _checkw` without deleting anything from its initial alias.  
+When I say: Add `bind mwheelup tick1` in `+w`, you need to change alias of +w from `alias +w "+forward;alias checkw _checkw"` to `alias +w "+forward;alias checkw _checkw;bind mwheelup tick1"`, which is only adding `;bind mwheelup tick1` without deleting anything from its initial alias.
 
 Note: Remember to add semicolons between each command within an alias.
+
+(The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 ```
+alias _checkw "-forward;alias checkw"
 alias +w "+forward;alias checkw _checkw"
 alias -w "checkw"
-alias checkw "-forward"
 ```
 ## Crouch jump bind
 This bind gives you a perfect crouch jump (which gives you more height) on pressing a single key. Binding long jumps is what is referred to as “binding” in VNL.
@@ -34,25 +38,22 @@ bind <key> +lj
 ## W release bind with key
 This bind gives you a perfect timing of w-release in every jump, this feature can be used in both CJ and normal jump. 
 
+**The w-release function needs the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
+
 (The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 
 **CJ with w-release**
 ```
-alias _checkw "-forward;alias checkw"
 alias +lj "+jump;+duck;checkw"
 alias -lj "-jump;-duck"
-bind <key> +lj
+bind <key> +cj
 ```
-> Add `alias checkw _checkw` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
-
 **Normal jump with w-release**
 ```
-alias _checkw "-forward;alias checkw"
 alias +lj "+jump;checkw"
 alias -lj "-jump"
 bind <key> +lj
 ```
-> Add `alias checkw _checkw` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 ## Null
 Null is an alias bind that makes you can't press A and D at the same time. It will provide you a consistent 0 overlap in movement, you can't complete advanced jumpstats technique such as **onekey** without using it. 
 
@@ -82,7 +83,9 @@ alias "rh2_lh1" "alias -fa lh1_o;alias +fd lh1_lh2"
 alias "lh2_rh1" "alias -fd rh1_o;alias +fa rh1_rh2"
 ```
 ## Low jump bind
-Low jump also known as the minijump, 48 height jump or 1 tick bind, this bind allows you to consistently get 48 height jumps. For some reasons, the bind will eventually make the jump desubticked, but the doc will still provide both desubtick and subtick format of lowjump binds. 
+Low jump also known as the minijump, 48 height jump or 1 tick bind, this bind allows you to consistently get 48 height jumps. For some reasons, the bind will eventually make the jump desubticked, but the doc will still provide both desubtick and subtick format of lowjump binds.
+
+**The w-release function needs the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 
 (The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 
@@ -94,15 +97,14 @@ bind <key> +mj
 ```
 **Low jump with w-release**
 ```
-alias _checkw "-forward;alias checkw"
 alias +mj "+jump;+duck;-jump;-jump;-duck;-duck;checkw"
 alias -mj ""
 bind <key> +mj
 ```
-> Add `alias checkw _checkw` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
-
 ## Jump bug bind
 Jump bug can give you maintained velocity and same height as CJ when you hit it. You need to jump, crouch at the air and release the crouch with a specific timing when you land, it can be done by both manually and bind. But because of the effect of subtick, manual jb seems to be more inconsistent and difficult in cs2. The doc will provide jb bind the format of key and mouse wheel.
+
+**The some jump bug bind needs specfic change in the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 
 **Jump bug bind with key**
 ```
@@ -120,7 +122,7 @@ bind mwheelup "tick1"
 ```
 > Add `bind mwwheelup tick1` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 
-> To use this bind, you don't need to manually press crouch at the air in any time, just scroll the mouse wheel when the moment you feel you have landed, it will automatically crouch for a tick and release your crouch and try to jump. The bind above uses mwheelup as an example, change it to mwheeldown if you use mwheelup to jump.
+> To use this bind, you don't need to manually press crouch at the air in any time, just scroll the mouse wheel when the moment you feel you have landed, it will automatically crouch for a tick and release your crouch and try to jump. However, after using it for once, you need to press w to reset it. The bind above uses mwheelup as an example, change it to mwheeldown if you use mwheelup to jump.
 
 **Jump bug bind with mouse wheel 2**
 ```
@@ -132,12 +134,14 @@ bind mwheelup "tick1"
 ## Remove immobility and input errors bind
 The input rule in cs2 is more strict than csgo. If the input of + in a same command exceeds 1, it will be accumulated and you can't do anything until you input amount of - that greater than its +. The bind is used to resolve the situation stuck in map-running, press the key will input 10x of - for regular movement binds.
 ```
-bind <key> "-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-left;-left;-left;-left;-left;-left;-left;-left;-left;-left;-right;-right;-right;-right;-right;-right;-right;-right;-right;-right;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-back;;-back;-back;-back;-back;-back;-back;-back;-back;-back"
+bind <key> "-jump;-jump;-jump;-jump;-jump;-duck;-duck;-duck;-duck;-duck;-left;-left;-left;-left;-left;-right;-right;-right;-right;-right;-forward;-forward;-forward;-forward;-forward;-back;-back;-back;-back;-back"
 ```
 ## Turn bind
 This bind can automatically turn your camera left or right with a specfic angular velocity, not really useful in map-running, might be used in some specfic cases.
 ```
 bind <key> "+turnleft"
 bind <key> "+turnright"
+bind <key> "+turnup"
+bind <key> "+turndown"
 ```
 

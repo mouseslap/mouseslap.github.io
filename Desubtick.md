@@ -1,4 +1,4 @@
-# SUBTICK PAGE FOR BINDS / ALIASES
+# DESUBTICK PAGE FOR BINDS / ALIASES
 ### **If you are in this page, you should have the desubtick binds in your autoexec.cfg file.**
 ### Content:
 [Alias of W](#alias-of-w)  
@@ -15,16 +15,19 @@
 Many advanced cs2 binds (jump bug bind, w release bind) require a change in bind and alias of w, so the latest bind/alias will cover the orginal bind/alias of w, which makes the alias very chaotic. To prevent the case happening, a consistent alias of w is recommanded. The following binds in this doc will keep using the alias of +w/-w, and if there are any additions to commands in the following binds relevant with the alias of w, just add command directly in the alias of w, instead of realiasing the entire thing.  
 
 For example:  
-When I say: Add `alias checkw _checkw` in `+w`, you need to change alias of +w from `alias +w "+forward_"` to `alias +w "+forward_; alias checkw _checkw"`, which is only adding `; alias checkw _checkw` without deleting anything from its initial alias.
+When I say: Add `bind mwheelup tick1` in `+w`, you need to change alias of +w from `alias +w "+forward_;alias checkw _checkw"` to `alias +w "+forward_;alias checkw _checkw;bind mwheelup tick1"`, which is only adding `;bind mwheelup tick1` without deleting anything from its initial alias.
 
 Note: Remember to add semicolons between each command within an alias.
 
-Note: Remember to delete `bind w +forward_` in the list of desubtick binds if you are using it, because `"bind w +forward_"` would change the bind of w, which covers `bind w +w` every time you launch the game.
+Note: Remember to delete `bind w +forward_` in the list of desubtick binds if you are using it, because `"bind w +forward_"` would change the bind of w, which covers `bind w +w` every time you launch the game. 
 
+**I recommand to copy the bind below into your autoexec.cfg file.**
+
+(The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 ```
-alias +w "+forward_"
+alias _checkw "-forward_;alias checkw"
+alias +w "+forward_;alias checkw _checkw"
 alias -w "checkw"
-alias checkw "-forward_"
 ```
 ## Crouch jump bind
 This bind gives you a perfect crouch jump (which gives you more height) on pressing a single key. Binding long jumps is what is referred to as “binding” in VNL.  
@@ -35,27 +38,24 @@ alias -lj "-duck_;-jump_"
 bind <key> +lj
 ```
 ## W release bind with key
-This bind gives you a perfect timing of w-release in every jump, this feature can be used in both CJ and normal jump.
+This bind gives you a perfect timing of w-release in every jump, this feature can be used in both CJ and normal jump. 
+
+**The w-release function needs the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 
 (The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 
 **CJ w-release desubtick version**
 ```
-alias _checkw "-forward_;alias checkw"
 alias +lj "+jump_;+duck_;checkw"
 alias -lj "-jump_;-duck_"
-bind <key> +lj
+bind <key> +cj
 ```
-> Add `alias checkw _checkw` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
-
 **Normal jump w-release desubtick version**
 ```
-alias _checkw "-forward_;alias checkw"
 alias +lj "+jump_;checkw"
 alias -lj "-jump_"
 bind <key> +lj
 ```
-> Add `alias checkw _checkw` in `+w`(check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 ## Null
 Null is an alias bind that makes you can't press A and D at the same time. It will provide you a consistent 0 overlap in movement, you can't complete advanced jumpstats technique such as **onekey** without using it. 
 
@@ -90,6 +90,8 @@ alias "lh2_rh1" "alias -fd rh1_o;alias +fa rh1_rh2"
 ## Low jump bind
 Low jump also known as the minijump, 48 height jump or 1 tick bind, this bind allows you to consistently get 48 height jumps.
 
+**The w-release function needs the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
+
 (The following binds are made by gliptal, shoutout to Gliptal for permission of the bind)
 
 **Low jump (no w-release)**
@@ -100,12 +102,10 @@ bind <key> +mj
 ```
 **Low jump with w-release**
 ```
-alias _checkw "-forward_; alias checkw";
 alias +mj "+jump_;+duck_;-jump_;-jump_;-duck_;-duck_;checkw"
 alias -mj ""
 bind <key> +mj
 ```
-> Add `alias checkw _checkw` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
 ## Jump bug bind
 Jump bug can give you maintained velocity and same height as CJ when you hit it. You need to jump, crouch at the air and release the crouch with a specific timing when you land, it can be done by both manually and bind. But because of the effect of subtick, manual jb seems to be more inconsistent and difficult in cs2. The doc will provide jb bind the format of key and mouse wheel.
 
@@ -137,7 +137,7 @@ bind mwheelup "tick1"
 ## Remove immobility and input errors bind
 The input rule in cs2 is more strict than csgo. If the input of + in a same command exceeds 1, it will be accumulated and you can't do anything until you input amount of - that greater than its +. The bind is used to resolve the situation stuck in map-running, press the key will input 10x of - for regular movement binds.
 ```
-bind <key> "-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-jump;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-duck;-left;-left;-left;-left;-left;-left;-left;-left;-left;-left;-right;-right;-right;-right;-right;-right;-right;-right;-right;-right;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-forward;-back;;-back;-back;-back;-back;-back;-back;-back;-back;-back"
+bind <key> "-jump;-jump;-jump;-jump;-jump;-duck;-duck;-duck;-duck;-duck;-left;-left;-left;-left;-left;-right;-right;-right;-right;-right;-forward;-forward;-forward;-forward;-forward;-back;-back;-back;-back;-back"
 ```
 
 ## Turn bind
@@ -145,4 +145,6 @@ This bind can automatically turn your camera left or right with a specfic angula
 ```
 bind <key> "+turnleft"
 bind <key> "+turnright"
+bind <key> "+turnup"
+bind <key> "+turndown"
 ```
