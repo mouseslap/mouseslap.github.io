@@ -86,7 +86,7 @@ bind 5 kz_pause
 bind 6 kz_r
 ```
 ## General desubtick binds
-Desubtick bind is an new feature for cs2, it can provide a better consistency in both height in jump and strafe, which cancel the effect of subtick. This doc will list out all the desubtick binds that can be potentially used in cs2, but only some of them are useful in kz (e.g. movements, jump, duck). You can copy all of them in your `autoexec.cfg` to automatically exec it when you launch cs2. 
+Desubtick bind is an new feature for cs2, it can provide a better consistency in height in jump, which cancel the effect of subtick. This doc will list out all the desubtick binds that can be potentially used in cs2, but only some of them are useful in kz (e.g. movements, jump, duck). You can copy all of them in your `autoexec.cfg` to automatically exec it when you launch cs2. 
 
 **In the following binds/aliases except general server commands, the website will provide both subtick version and desubtick version in different pages, check the top right corner select the one you feel preferable.**  
 
