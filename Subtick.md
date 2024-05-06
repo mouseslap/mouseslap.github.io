@@ -4,6 +4,7 @@
 [Alias of W](#alias-of-w)  
 [Crouch jump bind](#crouch-jump-bind)  
 [W release bind with key](#w-release-bind-with-key)  
+[W release bind with mouse wheel](#w-release-bind-with-mouse-wheel)  
 [Null](#null)  
 [Low jump bind](#low-jump-bind)  
 [Jump bug bind](#jump-bug-bind)  
@@ -44,8 +45,8 @@ This bind gives you a perfect timing of w-release in every jump, this feature ca
 
 **CJ with w-release**
 ```
-alias +lj "+jump;+duck;checkw"
-alias -lj "-jump;-duck"
+alias +cj "+jump;+duck;checkw"
+alias -cj "-jump;-duck"
 bind <key> +cj
 ```
 **Normal jump with w-release**
@@ -53,6 +54,24 @@ bind <key> +cj
 alias +lj "+jump;checkw"
 alias -lj "-jump"
 bind <key> +lj
+```
+## W release bind with mouse wheel
+This bind gives you a perfect timing of w-release in every jump, this feature can be used in both CJ and normal jump. The binds below use mwheelup as an example, change it to mwheeldown if you use mwheelup to jump. 
+
+**The w-release function needs the alias of w to activate.** (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
+
+**CJ with w-release**
+```
+alias tick1 "+jump;-jump;+duck;checkw;bind mwheelup tick2"
+alias tick2 "-duck"
+bind mwheelup +tick1
+```
+> Add `bind mwwheelup tick1` in `+w` (check [Alias of W](#alias-of-w) if you don't understand what does it mean)
+
+**Normal jump with w-release**
+```
+alias tick1 "+jump;-jump;checkw"
+bind mwheelup tick1
 ```
 ## Null
 Null is an alias bind that makes you can't press A and D at the same time. It will provide you a consistent 0 overlap in movement, you can't complete advanced jumpstats technique such as **onekey** without using it. 
@@ -145,3 +164,9 @@ bind <key> "+turnup"
 bind <key> "+turndown"
 ```
 
+## Spam CP Bind
+This bind can allow you to set significant amount of checkpoints in a short time. Normally used in cp'ing in bhop sections or edging. The binds below use mwheelup as an example, change it to mwheeldown if you use mwheelup to jump. 
+```
+alias tick1 "kz_checkpoint"
+bind mwheelup tick1
+```
